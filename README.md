@@ -45,7 +45,7 @@ In summary, this walkthrough provides a practical framework for testing content 
 
 <h3>Step 2: Create a Resource Group in Azure</h3>
 
-<img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
+<img src="https://i.imgur.com/ENjW05T.png" height="80%" width="80%" alt=""/>
 
 - Action: Log into your Azure Portal at https://portal.azure.com.
 - Navigate: Click on Resource Groups from the navigation menu on the left-hand side.
@@ -57,7 +57,7 @@ In summary, this walkthrough provides a practical framework for testing content 
 
 <h3>Step 3: Create a Windows 10 Virtual Machine</h3>
 
-<img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
+<img src="https://i.imgur.com/A4W0wBB.png" height="80%" width="80%" alt=""/>
 
 - Navigate: In the Azure Portal, search for Virtual Machines in the top search bar and select it.
 - Create VM:
@@ -74,7 +74,7 @@ In summary, this walkthrough provides a practical framework for testing content 
 
 <h3>Step 4: Log Into the VM Using Remote Desktop</h3>
 
-<img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
+<img src="https://i.imgur.com/ysfJ0QP.png" height="80%" width="80%" alt=""/>
 
 - Download RDP File:
   - On the VM's Overview page, click Connect > RDP.
@@ -86,7 +86,7 @@ In summary, this walkthrough provides a practical framework for testing content 
 
 <h3>Step 5: Check the VM’s IP Address</h3>
 
-<img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
+<img src="https://i.imgur.com/jHokyQi.png" height="80%" width="80%" alt=""/>
 
 - Action: Open a browser within the VM and go to https://whatismyipaddress.com/.
 - Result: Note the new IP address displayed, which will reflect the VM’s geographic location.
@@ -94,7 +94,7 @@ In summary, this walkthrough provides a practical framework for testing content 
 
 <h3>Step 6: Sign Up for ProtonVPN</h3>
 
-<img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
+<img src="https://i.imgur.com/1lJMaD6.png" height="80%" width="80%" alt=""/>
 
 - Action: On your actual computer, sign up for a free ProtonVPN account at https://account.protonvpn.com/signup?plan=free&language=en.
 - Complete Registration: Follow the steps to create an account (you may need to verify your email).
@@ -102,7 +102,7 @@ In summary, this walkthrough provides a practical framework for testing content 
 
 <h3>Step 7: Install ProtonVPN on the VM</h3>
 
-<img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
+<img src="https://i.imgur.com/DvPJrfh.png" height="80%" width="80%" alt=""/>
 
 - Action: On the VM, download the ProtonVPN client from https://protonvpn.com/.
 - Install: Follow the installation process within the VM.
@@ -110,22 +110,20 @@ In summary, this walkthrough provides a practical framework for testing content 
 
 <h3>Step 8: Connect to a VPN Server</h3>
 
-<img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
+<img src="https://i.imgur.com/Q2AO7JN.png" height="80%" width="80%" alt=""/>
 
 - Action: In the ProtonVPN client, choose a VPN server in a different country (e.g., Japan or another far location).
 - Connect: Wait for the VPN to establish a secure connection.
 
 <h3>Step 9: Check the VPN’s IP Address</h3>
 
-<img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
+<img src="https://i.imgur.com/IxZBzyC.png" height="80%" width="80%" alt=""/>
 
 - Action: Open a browser within the VM (while connected to the VPN) and go to https://whatismyipaddress.com/.
 - Result: Note the new IP address, reflecting the VPN server’s geographic location.
 - Save: Record this new IP address in the text file.
 
 <h3>Step 10: Test Websites with the VPN</h3>
-
-<img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
 
 - Browse to Test Sites: While still on the VM and connected to the VPN, visit websites like:
   - Google
@@ -136,6 +134,3 @@ In summary, this walkthrough provides a practical framework for testing content 
   - Does Disney redirect to a localized page?
   - Does Amazon show local prices, offers, or products for the VPN server’s location?
 - Document Observations: Note any changes in site behavior or presentation and save these observations.
-
-
-
