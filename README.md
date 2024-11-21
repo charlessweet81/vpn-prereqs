@@ -3,7 +3,11 @@
 </p>
 
 <h1>ProtonVPN - Installation & Configuring</h1>
-This tutorial outlines the prerequisites and installation of the open-source help desk ticketing system osTicket.<br />
+<p>
+This tutorial demonstrates how to test network configurations, geo-restrictions, and VPN functionality using Azure Virtual Machines and ProtonVPN. By creating a virtual machine in one location and connecting it to a VPN in another, we explore how public IPs change, regional content variations, and VPN privacy impact user experiences.<br />
+
+In summary, this walkthrough provides a practical framework for testing content localization, ensuring compliance, and evaluating VPN security, offering valuable insights for IT teams, developers, and cybersecurity professionals. 
+</p>
 
 <h2>Environments and Technologies Used</h2>
 
@@ -12,7 +16,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 - Internet Information Services (IIS)
 - ProtonVPN
 
-<h2>Operating Systems Used </h2>
+<h2>Operating Systems Used</h2>
 
 - Windows 10</b> (21H2)
 
@@ -20,7 +24,14 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 - Step 1: Capture Your IP Address (Before Creating the VM)
 - Step 2: Log in to Remote Desktop
-- Step 3: 
+- Step 3: Create a Windows 10 Virtual Machine
+- Step 4: Log Into the VM Using Remote Desktop
+- Step 5: Check the VM’s IP Address
+- Step 6: Step 6: Sign Up for ProtonVPN
+- Step 7: Step 7: Connect to a VPN Server
+- Step 8: Check the VPN’s IP Address
+- Step 9: Check the VPN’s IP Address
+- Step 10: Test Website Behavior with VPN
 
 
 <h2>Installation Steps</h2>
@@ -54,41 +65,106 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 - Navigate: In the Azure Portal, search for Virtual Machines in the top search bar and select it.
 - Create VM:
--   Click + Create and choose Azure Virtual Machine.
--   Under Basics, fill out the details:
-  -   Select the previously created Resource Group.
-  -   Give the VM a name (e.g., "TestVM").
-  -   Choose an image: Windows 10 Pro or Enterprise.
-  -   Select a region in a different country (e.g., Europe or Asia).
-  -   Choose a size (e.g., Standard D2s_v3 for light use).
-  -   Set admin username and password for login.
--   Click Review + Create, then Create.
--   Wait for Deployment: Once deployment completes, navigate to the VM's Overview page.
+  - Click + Create and choose Azure Virtual Machine.
+  - Under Basics, fill out the details:
+    - Select the previously created Resource Group.
+    - Give the VM a name (e.g., "TestVM").
+    - Choose an image: Windows 10 Pro or Enterprise.
+    - Select a region in a different country (e.g., Europe or Asia).
+    - Choose a size (e.g., Standard D2s_v3 for light use).
+    - Set admin username and password for login.
+- Click Review + Create, then Create.
+- Wait for Deployment: Once deployment completes, navigate to the VM's Overview page.
 
 <br />
 
 <h3>Step 4: Log Into the VM Using Remote Desktop</h3>
 
-<p>
 <img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
-</p>
+
+- Download RDP File:
+  - On the VM's Overview page, click Connect > RDP.
+  - Download the .rdp file.
+- Open Remote Desktop:
+  - Open the downloaded .rdp file.
+  - Enter the admin username and password set during VM creation.
+- Log In: Connect to the virtual machine’s desktop.
 
 <br />
 
-<h3>Step 4: Check the VM’s IP Address</h3>
+<h3>Step 5: Check the VM’s IP Address</h3>
 
-<p>
 <img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
-</p>
+
+- Action: Open a browser within the VM and go to https://whatismyipaddress.com/.
+- Result: Note the new IP address displayed, which will reflect the VM’s geographic location.
+- Save: Copy this IP address and save it in the text file for comparison.
 
 <br />
 
-<h3>Step 4: Sign Up for ProtonVPN on Your Computer</h3>
+<h3>Step 6: Sign Up for ProtonVPN</h3>
 
-<p>
 <img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
-</p>
+
+- Action: On your actual computer, sign up for a free ProtonVPN account at https://account.protonvpn.com/signup?plan=free&language=en.
+- Complete Registration: Follow the steps to create an account (you may need to verify your email).
+- Save Credentials: Note down the username and password for use later.
 
 <br />
 
- Install ProtonVPN on the VM
+<h3>Step 7: Install ProtonVPN on the VM</h3>
+
+<img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
+
+- Action: On the VM, download the ProtonVPN client from https://protonvpn.com/.
+- Install: Follow the installation process within the VM.
+- Login: Log in with the ProtonVPN account credentials created earlier.
+
+<br />
+
+<h3>Step 7: Connect to a VPN Server</h3>
+
+<img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
+
+- Action: In the ProtonVPN client, choose a VPN server in a different country (e.g., Japan or another far location).
+- Connect: Wait for the VPN to establish a secure connection.
+
+<br />
+
+<h3>Step 8: Check the VPN’s IP Address</h3>
+
+<img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
+
+- Action: Open a browser within the VM (while connected to the VPN) and go to https://whatismyipaddress.com/.
+- Result: Note the new IP address, reflecting the VPN server’s geographic location.
+- Save: Record this new IP address in the text file.
+
+<br />
+
+<h3>Step 9: Check the VPN’s IP Address</h3>
+
+<img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
+
+- Action: Open a browser within the VM (while connected to the VPN) and go to https://whatismyipaddress.com/.
+- Result: Note the new IP address, reflecting the VPN server’s geographic location.
+- Save: Record this new IP address in the text file.
+
+<br />
+
+<h3>Step 10: Test Websites with the VPN</h3>
+
+<img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
+
+- Browse to Test Sites: While still on the VM and connected to the VPN, visit websites like:
+  - Google
+  - Disney
+  - Amazon
+- Observe Changes:
+  - Does Google display results in a different language or domain (e.g., .jp for Japan)?
+  - Does Disney redirect to a localized page?
+  - Does Amazon show local prices, offers, or products for the VPN server’s location?
+- Document Observations: Note any changes in site behavior or presentation and save these observations.
+
+<br />
+
+
