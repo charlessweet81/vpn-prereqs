@@ -22,8 +22,8 @@ In summary, this walkthrough provides a practical framework for testing content 
 
 <h2>List of Prerequisites</h2>
 
-- Step 1: Capture Your IP Address (Before Creating the VM)
-- Step 2: Log in to Remote Desktop
+- Step 1: Capture Your IP Address
+- Step 2: Create a Resource Group in Azure
 - Step 3: Create a Windows 10 Virtual Machine
 - Step 4: Log Into the VM Using Remote Desktop
 - Step 5: Check the VM’s IP Address
@@ -33,17 +33,15 @@ In summary, this walkthrough provides a practical framework for testing content 
 - Step 9: Check the VPN’s IP Address
 - Step 10: Test Website Behavior with VPN
 
-
 <h2>Installation Steps</h2>
-<h3>Step 1: Create Virtual Machine in Azure</h3>
+
+<h3>Step 1: Capture Your IP Address</h3>
 
 <img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
-
 
 - Action: Open a web browser on your actual computer (not a virtual machine) and go to https://whatismyipaddress.com/.
 - Purpose: This shows your public IP address as assigned by your Internet Service Provider.
 - Result: Copy the IP address shown on the page and save it in a text file (e.g., MyIP.txt) for reference.
-<br /> 
 
 <h3>Step 2: Create a Resource Group in Azure</h3>
 
@@ -56,8 +54,6 @@ In summary, this walkthrough provides a practical framework for testing content 
   - Enter a name for the resource group (e.g., "TestVMGroup").
   - Select a region for the resource group. (This can be your current location.)
   - Click Review + Create and then Create.
-
-<br /> 
 
 <h3>Step 3: Create a Windows 10 Virtual Machine</h3>
 
@@ -76,8 +72,6 @@ In summary, this walkthrough provides a practical framework for testing content 
 - Click Review + Create, then Create.
 - Wait for Deployment: Once deployment completes, navigate to the VM's Overview page.
 
-<br />
-
 <h3>Step 4: Log Into the VM Using Remote Desktop</h3>
 
 <img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
@@ -90,8 +84,6 @@ In summary, this walkthrough provides a practical framework for testing content 
   - Enter the admin username and password set during VM creation.
 - Log In: Connect to the virtual machine’s desktop.
 
-<br />
-
 <h3>Step 5: Check the VM’s IP Address</h3>
 
 <img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
@@ -99,8 +91,6 @@ In summary, this walkthrough provides a practical framework for testing content 
 - Action: Open a browser within the VM and go to https://whatismyipaddress.com/.
 - Result: Note the new IP address displayed, which will reflect the VM’s geographic location.
 - Save: Copy this IP address and save it in the text file for comparison.
-
-<br />
 
 <h3>Step 6: Sign Up for ProtonVPN</h3>
 
@@ -110,8 +100,6 @@ In summary, this walkthrough provides a practical framework for testing content 
 - Complete Registration: Follow the steps to create an account (you may need to verify your email).
 - Save Credentials: Note down the username and password for use later.
 
-<br />
-
 <h3>Step 7: Install ProtonVPN on the VM</h3>
 
 <img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
@@ -120,26 +108,12 @@ In summary, this walkthrough provides a practical framework for testing content 
 - Install: Follow the installation process within the VM.
 - Login: Log in with the ProtonVPN account credentials created earlier.
 
-<br />
-
-<h3>Step 7: Connect to a VPN Server</h3>
+<h3>Step 8: Connect to a VPN Server</h3>
 
 <img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
 
 - Action: In the ProtonVPN client, choose a VPN server in a different country (e.g., Japan or another far location).
 - Connect: Wait for the VPN to establish a secure connection.
-
-<br />
-
-<h3>Step 8: Check the VPN’s IP Address</h3>
-
-<img src="https://i.imgur.com/LXakI0h.png" height="80%" width="80%" alt=""/>
-
-- Action: Open a browser within the VM (while connected to the VPN) and go to https://whatismyipaddress.com/.
-- Result: Note the new IP address, reflecting the VPN server’s geographic location.
-- Save: Record this new IP address in the text file.
-
-<br />
 
 <h3>Step 9: Check the VPN’s IP Address</h3>
 
@@ -148,8 +122,6 @@ In summary, this walkthrough provides a practical framework for testing content 
 - Action: Open a browser within the VM (while connected to the VPN) and go to https://whatismyipaddress.com/.
 - Result: Note the new IP address, reflecting the VPN server’s geographic location.
 - Save: Record this new IP address in the text file.
-
-<br />
 
 <h3>Step 10: Test Websites with the VPN</h3>
 
@@ -165,6 +137,5 @@ In summary, this walkthrough provides a practical framework for testing content 
   - Does Amazon show local prices, offers, or products for the VPN server’s location?
 - Document Observations: Note any changes in site behavior or presentation and save these observations.
 
-<br />
 
 
